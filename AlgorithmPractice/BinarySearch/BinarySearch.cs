@@ -10,26 +10,21 @@ namespace AlgorithmPractice.BinarySearch
     {
         public static int Run(int[] sortedValues, int search)
         {
-
-            //[1, 5, 9, 13] ... 14
-            //currIndex / currVal / min / max
-            //1 / 5 / 0 / 3
-            //x / x / 2 / 3
-
             int min = 0;
             int max = sortedValues.Length - 1;
+            
             while (min <= max)
             {
-                int currentIndex = (min + max) / 2;
-                int currentValue = sortedValues[currentIndex];
+                int guessIndex = (max + min) / 2;
+                int guessValue = sortedValues[guessIndex];
 
-                if (currentValue == search)
-                    return currentIndex;
+                if (guessValue == search)
+                    return guessIndex;
 
-                if (currentValue < search)
-                    min = currentIndex + 1;
-                else //currentValue must be > search
-                    max = currentIndex - 1;
+                if (guessValue > search)
+                    max = guessIndex - 1;
+                else
+                    min = guessIndex + 1;
             }
 
             return -1;
