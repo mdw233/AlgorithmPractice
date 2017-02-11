@@ -22,12 +22,12 @@ Approach:
 
 Complexity
 -----------------------
-First - [watch this 7 min refreshed on logarithms](https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms).  It is easy to follow and really helpful for the next part.
+First - [watch this 7 min refresher on logarithms](https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/v/logarithms).  It is easy to follow and really helpful for the next part.
 
 To figure out the max number of iterations we would:
  1. find the array size
  1. x = round up to the next power of 2 (for instance, for an array of 1000 elements we will round up to 1024)
- 1. y = solve for LOG2(y) 
+ 1. y = solve for LOG2(x) 
      * in this case LOG2(1024) = 10
  1. final answer is y + 1
      * in this case 10 + 1 == 11
