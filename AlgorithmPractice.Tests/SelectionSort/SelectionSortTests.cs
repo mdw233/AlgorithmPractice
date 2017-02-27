@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using System.Diagnostics;
 
 namespace AlgorithmPractice.Tests
 {
@@ -48,6 +49,33 @@ namespace AlgorithmPractice.Tests
             var result = SelectionSort.Run(array);
             
             array.SequenceEqual(new int[] { 1, 2, 3, 9, 21, 34, 50, 100, 430, 430, 440 }).Should().BeTrue();
+        }
+        
+        [TestMethod]
+        public void Iterations_timing()
+        {
+            var msToComplete = RunIterationsTiming(10000);
+            Trace.Write($"{10000} iterations took {msToComplete}ms to SelectionSort");
+
+            msToComplete = RunIterationsTiming(20000);
+            Trace.Write($"{20000} iterations took {msToComplete}ms to SelectionSort");
+        }
+
+        private object RunIterationsTiming(int arraySize)
+        {
+            var array = new int[arraySize];
+            var rand = new Random();
+            for (var i = 0; i < arraySize; i++)
+            {
+                array[i] = rand.Next(1000);
+            }
+
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+            SelectionSort.Run(array);
+            stopWatch.Stop();
+
+            return stopWatch.ElapsedMilliseconds;
         }
     }
 }
