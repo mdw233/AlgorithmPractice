@@ -42,12 +42,16 @@
   <ItemGroup>
     <Compile Include="BinarySearch\BinarySearch.cs" />
     <Compile Include="Factorial\Factorial.cs" />
+    <Compile Include="HackerRank\DataStructures\Arrays\ArrayManipulation\ArrayManipulation.cs" />
+    <Compile Include="HackerRank\DataStructures\Arrays\ArrayManipulation\ArrayManipulationNotOptimal.cs" />
+    <Compile Include="HackerRank\DataStructures\HackerRankProblem.cs" />
     <Compile Include="InsertionSort\InsertionSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectionSort\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BinarySearch\README.md" />
+    <None Include="HackerRank\DataStructures\Arrays\ArrayManipulation\README.md" />
     <None Include="InsertionSort\README.md" />
     <None Include="SelectionSort\README.md" />
   </ItemGroup>
